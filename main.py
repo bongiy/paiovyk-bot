@@ -4,8 +4,14 @@ from aiogram.enums import ParseMode
 from aiogram.webhook.aiohttp_server import setup_application
 from aiohttp import web
 
+# Друк токена для дебагу
+print("DEBUG BOT_TOKEN:", os.getenv("BOT_TOKEN"))
+
 TOKEN = os.getenv("BOT_TOKEN")
 WEBHOOK_URL = os.getenv("WEBHOOK_URL")
+
+if not TOKEN or TOKEN == "None":
+    raise ValueError("BOT_TOKEN is not set! Перевірте змінні середовища у Railway.")
 
 bot = Bot(token=TOKEN, parse_mode=ParseMode.HTML)
 dp = Dispatcher()
