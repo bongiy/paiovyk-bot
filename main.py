@@ -7,7 +7,7 @@ from aiohttp import web
 # Друк токена для дебагу
 print("DEBUG BOT_TOKEN:", os.getenv("BOT_TOKEN"))
 
-TOKEN = os.getenv("BOT_TOKEN")
+TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 WEBHOOK_URL = os.getenv("WEBHOOK_URL")
 
 if not TOKEN or TOKEN == "None":
